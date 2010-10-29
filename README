@@ -2,7 +2,7 @@ Scratchpad for comparing Mandelbrot code between CUDA GPU (pyCUDA), Cython and N
 In collaboration with Didrik Pinte at Enthought
 
 To run Numpy/Cython version do:
-python setup_cython build_ext --inplace
+python setup_cython.py build_ext --inplace
 to build mandel.pyd, then run
 python mandelbrot_nogpu.py numpy
 and it'll report a run-time for Numpy and Cython.
