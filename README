@@ -1,0 +1,24 @@
+Scratchpad for comparing Mandelbrot code between CUDA GPU (pyCUDA), Cython and Numpy
+In collaboration with Didrik Pinte at Enthought
+
+To run Numpy/Cython version do:
+python setup_cython build_ext --inplace
+to build mandel.pyd, then run
+python mandelbrot_nogpu.py numpy
+and it'll report a run-time for Numpy and Cython.
+
+To run the GPU version do:
+python mandelbrot.py gpu
+and it'll run the pure CUDA C code through pyCUDA on a CUDA GPU
+
+Example timings:
+On my Core 2 Duo 3GHz with Cython 0.13 using w==400, h==400 (so xx==200, yy==200)
+running python mandelbrot_nogpu.py numpy
+Cython: 0.109 seconds
+Numpy (main): 6.4 seconds
+
+On the same machine with a CUDA GTX 480, same w,h values
+running python mandelbrot.py numpy
+pyCUDA: 0.012 seconds
+
+
